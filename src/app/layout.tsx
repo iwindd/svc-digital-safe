@@ -2,6 +2,7 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import type { Metadata } from "next";
 import { theme } from '../theme';
 import '@mantine/core/styles.css';
+import { Navbar } from './components/Navbar';
 
 export const metadata: Metadata = {
   title: "SVC Digital Safe",
@@ -21,6 +22,7 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider theme={theme}>
+          <Navbar />
           {children}
         </MantineProvider>
       </body>
