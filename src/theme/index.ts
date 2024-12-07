@@ -13,7 +13,7 @@ export const theme = createTheme({
   fontFamily: sarabun.style.fontFamily,
   breakpoints: {
     xs: '36em',
-    sm: '48em',
+    sm: '47em',
     md: '62em',
     lg: '75em',
     xl: '88em',
