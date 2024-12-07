@@ -24,14 +24,13 @@ export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
       href={link.link}
       className={classes.link}
-      onClick={(event) => event.preventDefault()}
     >
       {link.label}
-    </a>
+    </Link>
   ));
 
   return (
