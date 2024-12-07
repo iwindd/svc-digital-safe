@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { theme } from '../theme';
 import '@mantine/core/styles.css';
 import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
 
 export const metadata: Metadata = {
   title: "SVC Digital Safe",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <MantineProvider theme={theme}>
           <Navbar />
           {children}
+          <Footer />
         </MantineProvider>
       </body>
     </html>
