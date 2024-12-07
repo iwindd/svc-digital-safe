@@ -3,13 +3,14 @@
 import {
   Autocomplete,
   Burger,
+  Container,
   Divider,
   Drawer,
   Group,
   ScrollArea,
   Stack,
 } from "@mantine/core";
-import { useDisclosure, useMediaQuery } from "@mantine/hooks";
+import { useDisclosure } from "@mantine/hooks";
 import classes from "./style.module.css";
 import Image from "next/image";
 import iStoreLogo from "../../../assets/logo.png";
@@ -35,7 +36,7 @@ export function Navbar() {
 
   return (
     <header className={classes.header}>
-      <div className={classes.inner}>
+      <Container className={classes.inner}>
         <Group 
           justify="space-between" 
           align="center" 
@@ -67,7 +68,7 @@ export function Navbar() {
             {items}
           </ScrollArea>
         </Drawer>
-      </div>
+      </Container>
     </header>
   );
 }
