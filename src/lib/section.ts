@@ -1,4 +1,3 @@
-import sections from "@/data/sections.json";
-import { Section } from "@/type";
+import sections, { Section } from "@/data/sections";
 
 export const getSections = () : Section[] => sections
