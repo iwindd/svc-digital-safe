@@ -3,23 +3,29 @@
 import {
   IconBrandFacebook,
   IconBrandGithub,
-  IconBrandInstagram,
-  IconBrandTwitter,
   IconBrandYoutube,
 } from "@tabler/icons-react";
 import { ActionIcon, Container, Group, Text } from "@mantine/core";
 import classes from "./style.module.css";
 import iStoreLogo from "../../../assets/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
-const data = [
+interface FooterData{
+  title: string;
+  external?: boolean;
+  links: { label: string; link: string; }[];
+}
+
+const data : FooterData[] = [
   {
-    title: "มาตรา",
+    title: "อ้างอิง",
+    external: true,
     links: [
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
+      { label: "mdes.go.th", link: "https://www.mdes.go.th/law/detail/3516-%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%9C%E0%B8%B4%E0%B8%94%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%9E-%E0%B8%A8--%E0%B9%92%E0%B9%95%E0%B9%95%E0%B9%90" },
+      { label: "chayo555.com", link: "https://www.chayo555.com/th/newsroom/articles/44/%E0%B8%9E%E0%B8%A3%E0%B8%9A-%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%9C%E0%B8%B4%E0%B8%94%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%9E%E0%B8%A8-2550" },
+      { label: "dga.or.th", link: "https://www.dga.or.th/wp-content/uploads/2016/12/file_ce8c32197b28a5d438136a3bd8252b7c.pdf" },
+      { label: "blog.wu.ac.th", link: "https://blog.wu.ac.th/archives/10462" },
     ],
   },
   {
@@ -45,15 +51,29 @@ const data = [
 export function Footer() {
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
-      <Text<"a">
-        key={index}
-        className={classes.link}
-        component="a"
-        href={link.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </Text>
+      (
+        group.external ? (
+          <Text<"a">
+            key={index}
+            className={classes.link}
+            component="a"
+            href={link.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.label}
+          </Text>
+        ):(
+          <Text
+            key={index}
+            className={classes.link}
+            component={Link}
+            href={link.link}
+          >
+            {link.label}
+          </Text>
+        )
+      )
     ));
 
     return (
