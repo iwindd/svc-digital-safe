@@ -22,7 +22,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider theme={theme}>
+        <MantineProvider forceColorScheme="light" theme={theme}>
           <Navbar />
           {children}
           <Footer />
