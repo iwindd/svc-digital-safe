@@ -1,9 +1,12 @@
+'use client';
+
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { Card, Title } from "@mantine/core";
 import remarkGfm from "remark-gfm";
 import { Section } from "@/data/sections";
 import classes from "./style.module.css";
+import Liable from "./components/Liable";
 
 interface SectionProps {
   section: Section;
@@ -17,6 +20,8 @@ const Section = ({ section, number }: SectionProps) => {
       <div className={classes.paragraph}>
         <ReactMarkdown children={section.text} remarkPlugins={[remarkGfm]} />
       </div>
+
+      {section.liable && <Liable liable={section.liable}/>}
     </Card>
   );
 };

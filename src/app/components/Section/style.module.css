@@ -1,3 +1,8 @@
 .paragraph > p:first-of-type{
   text-indent: 0.5em;
 }
+
+.liableSection{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
