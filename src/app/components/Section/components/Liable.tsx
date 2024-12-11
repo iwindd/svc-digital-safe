@@ -64,7 +64,7 @@ const Liable = (props: LiableProps) => {
   const [allLiable] = React.useState(Array.isArray(props.liable) ? props.liable: [props.liable])
 
   return (
-    <Card.Section withBorder inheritPadding className={classes.liableSection}>
+    <Card.Section inheritPadding className={classes.liableSection}>
       <SimpleGrid 
         cols={{
           base: 1,

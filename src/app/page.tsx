@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <Container>
-      <Stack>
+      <Stack gap="xs">
         {sections.map((section, index) => (
           <Section key={section.id} section={section} number={index+1}/>
         ))}
