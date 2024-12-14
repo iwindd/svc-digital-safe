@@ -9,6 +9,30 @@ export interface Section{
   id: number;
   text: string;
   liable?: Liable;
+  liablePoint: number;
+}
+
+const WAGE = 400;
+
+const calculateLiablePoint = (liable: Liable) => {
+  try {
+    let point = 0;
+  
+    const calPoint = (liable : LiableSingle) => {
+      if (liable.fine) point = (liable.fine[2] != undefined ? liable.fine[0] : liable.fine[1]) as number;
+      if (liable.imprisonment) point = ((liable.imprisonment[2] != undefined ? liable.imprisonment[0] : liable.imprisonment[1]) as number) * WAGE;
+    }
+
+    if (Array.isArray(liable)) {
+      liable.forEach((liableSingle) => calPoint(liableSingle));
+    } else {
+      calPoint(liable);
+    }
+
+    return point / 100;
+  } catch (error) {
+    return 0;
+  }
 }
 
 export default [
@@ -288,4 +312,7 @@ export default [
     "text": `ในการปฏิบัติหน้าที่ พนักงานเจ้าหน้าที่ต้องแสดงบัตรประจำตัว ต่อบุคคลซึ่งเกี่ยวข้อง
 บัตรประจำตัวของพนักงานเจ้าหน้าที่ให้เป็นไปตามแบบที่รัฐมนตรีประกาศ ในราชกิจจานุเบกษา`
   },
-] as Section[]
+].map(section => ({
+    ...section,
+    liablePoint: calculateLiablePoint(section.liable as Liable)
+})) as Section[]
