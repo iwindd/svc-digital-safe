@@ -13,7 +13,7 @@ import {
   Title,
 } from "@mantine/core";
 import remarkGfm from "remark-gfm";
-import { Section } from "@/data/sections";
+import type { Section } from "@/data/sections";
 import classes from "./style.module.css";
 import Liable from "./components/Liable";
 import { IconBrandYoutube, IconGavel } from "@tabler/icons-react";

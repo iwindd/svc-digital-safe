@@ -1,14 +1,11 @@
 "use client";
-/* import { IconSearch } from '@tabler/icons-react'; */
 import {
-  Autocomplete,
   Burger,
   Container,
   Divider,
   Drawer,
   Group,
   ScrollArea,
-  Stack,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./style.module.css";

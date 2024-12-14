@@ -1,5 +1,5 @@
-import { Liable, LiableName, LiableValue } from '@/data/sections'
-import { Card, Divider, List, rem, SimpleGrid, ThemeIcon } from '@mantine/core'
+import type { Liable, LiableName, LiableValue } from '@/data/sections'
+import { Card, List, rem, SimpleGrid, ThemeIcon } from '@mantine/core'
 import { IconLock, IconReceipt } from '@tabler/icons-react'
 import classes from "../style.module.css";
 import React from 'react'

@@ -25,8 +25,6 @@ export default function Home() {
   const sections = getSections();
   const [filter, setFilter] = useState<string | null>("0");
 
-  console.log(sections)
-
   return (
     <Container>
       <Banner />
