@@ -18,21 +18,29 @@ import Markdown from "./components/Markdown";
 interface SectionProps {
   section: Section;
   number: number;
+  popover?: boolean
 }
 
-const Section = ({ section, number }: SectionProps) => {
+const Section = ({ section, number, popover }: SectionProps) => {
   return (
-    <Card shadow="md" padding="lg" radius="md" id={`section${number}`}>
+    <Card 
+      {...(!popover && {
+        shadow: "md",
+        padding: "lg",
+        radius: "md",
+        id: `section${number}`
+      })}
+    >
       <Card.Section inheritPadding className={classes.headerSection}>
         <Group>
           <IconGavel />
           <Title order={3}>มาตราที่ {number}</Title>
         </Group>
       </Card.Section>
-      <div className={classes.paragraph}>
+      <div className={classes.paragraph} style={{maxHeight: popover ? "200px" : "auto"}}>
         <Markdown children={section.text} />
       </div>
-      {(section.cases || section.offense) && (
+      {(section.cases || section.offense) && !popover &&(
         <Accordion
           variant="filled"
           radius="xs"
@@ -81,7 +89,7 @@ const Section = ({ section, number }: SectionProps) => {
             ))}
         </Accordion>
       )}
-      {section.liable && <Liable liable={section.liable} />}
+      {section.liable && !popover && <Liable liable={section.liable} />}
     </Card>
   );
 };
