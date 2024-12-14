@@ -25,7 +25,7 @@ interface SectionProps {
 
 const Section = ({ section, number }: SectionProps) => {
   return (
-    <Card shadow="md" padding="lg" radius="md">
+    <Card shadow="md" padding="lg" radius="md" id={`section${number}`}>
       <Card.Section inheritPadding className={classes.headerSection}>
         <Group>
           <IconGavel />
