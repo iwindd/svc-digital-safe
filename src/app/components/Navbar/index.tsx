@@ -16,7 +16,7 @@ import Link from "next/link";
 const links = [
   { link: "/", label: "มาตรา" },
   { link: "/effect", label: "ผลกระทบ" },
-  { link: "/about", label: "ข้อมูลผู้พัฒนา" },
+  { link: "/report", label: "การแจ้งความ" },
 ];
 
 export function Navbar() {
