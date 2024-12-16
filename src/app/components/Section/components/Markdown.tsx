@@ -1,3 +1,4 @@
+"use client"
 import { getSectionById } from "@/lib/section";
 import { List, Text } from "@mantine/core";
 import React from "react";
