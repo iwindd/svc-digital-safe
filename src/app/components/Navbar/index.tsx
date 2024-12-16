@@ -14,7 +14,8 @@ import iStoreLogo from "../../../assets/logo.png";
 import Link from "next/link";
 
 const links = [
-  { link: "/", label: "มาตราทั้งหมด" },
+  { link: "/", label: "มาตรา" },
+  { link: "/effect", label: "ผลกระทบ" },
   { link: "/about", label: "ข้อมูลผู้พัฒนา" },
 ];
 
