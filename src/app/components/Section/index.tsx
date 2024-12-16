@@ -9,19 +9,19 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import type { Section } from "@/data/sections";
+import type { Section as SectionType } from "@/data/sections";
 import classes from "./style.module.css";
 import Liable from "./components/Liable";
 import { IconGavel } from "@tabler/icons-react";
 import Markdown from "./components/Markdown";
 
 interface SectionProps {
-  section: Section;
+  section: SectionType;
   number: number;
-  popover?: boolean
+  popover?: boolean;
 }
 
-const Section = ({ section, number, popover }: SectionProps) => {
+const Section = React.memo(({ section, number, popover }: SectionProps) => {
   return (
     <Card 
       {...(!popover && {
@@ -92,6 +92,6 @@ const Section = ({ section, number, popover }: SectionProps) => {
       {section.liable && !popover && <Liable liable={section.liable} />}
     </Card>
   );
-};
+});
 
 export default Section;

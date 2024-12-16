@@ -1,3 +1,9 @@
 .divider{
   margin: 1em 0;
 }
+
+.controller{
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 100%;
+  }
+}
