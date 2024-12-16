@@ -5,6 +5,7 @@ import React from 'react'
 import Markdown from '../components/Section/components/Markdown'
 
 const content = (`
+# ผลกระทบของการกระทำผิดตาม พรบ. คอมพิวเตอร์
 ## 1. ผลกระทบทางกฎหมาย
 - **โทษทางอาญา**:
   - ผู้กระทำผิดอาจได้รับโทษปรับหรือจำคุกตามมาตราต่างๆ ใน พรบ. คอมพิวเตอร์ เช่น
