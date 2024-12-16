@@ -2,10 +2,10 @@
   padding-left: var(--mantine-spacing-md);
   position: sticky;
   top: var(--mantine-spacing-xl);
-  left: 100%;
+  right: 0;
   flex: 0 0 calc(var(--docs-table-of-contents-width) - 20px);
 
-  @media (max-width: $docs-mdx-breakpoint) {
+  @media (max-width: $mantine-breakpoint-sm) {
     display: none;
   }
 
@@ -35,10 +35,15 @@
   }
 }
 
+.scrollArea{
+  padding-inline-end: 0;
+  padding-inline-start: 0;
+}
+
 .link {
   display: block;
   border-left: 1px solid transparent;
-  padding: 8px var(--mantine-spacing-md);
+  padding: 8px var(--mantine-spacing-sm);
   margin-left: -1px;
   padding-left: calc(var(--toc-link-offset) * var(--mantine-spacing-lg));
   border-top-right-radius: var(--mantine-radius-sm);
@@ -95,7 +100,6 @@
 
 .items {
   border-left: 1px solid;
-
   @mixin light {
     border-color: var(--mantine-color-gray-3) !important;
   }

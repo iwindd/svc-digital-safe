@@ -103,6 +103,9 @@ export function TableOfContents({ withTabs }: TableOfContentsProps) {
             mah={`calc(100vh - ${rem(140)})`}
             type="never"
             offsetScrollbars
+            classNames={{
+              viewport: classes.scrollArea,
+            }}
           >
             <div className={classes.items}>{items}</div>
           </ScrollArea.Autosize>
