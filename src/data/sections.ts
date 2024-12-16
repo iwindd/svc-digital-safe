@@ -1,3 +1,6 @@
+import category from "./category";
+import categories, { Category } from "./category";
+
 export type LiableName       = "imprisonment" | "fine" | "fineUntil";
 export type LiableType       = "<=" | "-";
 export type LiableValue      = [LiableName | number, LiableType | string, number];
@@ -12,6 +15,7 @@ export interface Section{
   liable?: Liable;
   liablePoint: number;
   cases?: string[]
+  category?: Category;
 }
 
 const WAGE = 400;
@@ -416,5 +420,6 @@ export default [
   },
 ].map(section => ({
     ...section,
-    liablePoint: calculateLiablePoint(section.liable as Liable)
+    liablePoint: calculateLiablePoint(section.liable as Liable),
+    category: categories.find(category => category.id === section.category) as Category
 })) as Section[]

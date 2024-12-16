@@ -4,6 +4,7 @@ import React from "react";
 import {
   Accordion,
   AspectRatio,
+  Badge,
   Card,
   Group,
   Text,
@@ -32,9 +33,15 @@ const Section = React.memo(({ section, number, popover }: SectionProps) => {
       })}
     >
       <Card.Section inheritPadding className={classes.headerSection}>
-        <Group>
-          <IconGavel />
-          <Title order={3}>มาตราที่ {number}</Title>
+        <Group align="center" justify="space-between">
+          <Group>
+            <IconGavel />
+            <Title order={3}>มาตราที่ {number}</Title>
+          </Group>
+
+          { section.category && (
+            <Badge color={section.category.color}>{section.category.label}</Badge>
+          )}
         </Group>
       </Card.Section>
       <div className={classes.paragraph} style={{maxHeight: popover ? "200px" : "auto"}}>
