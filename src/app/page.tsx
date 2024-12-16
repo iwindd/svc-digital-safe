@@ -18,6 +18,7 @@ import Banner from "./components/Banner";
 import { useState } from "react";
 import classes from "./style.module.css";
 import type { Section as TSection } from "@/data/sections";
+import { TableOfContents } from "./components/TableOfContents";
 
 const filers = [
   { value: "0", label: "มาตรา" },
@@ -50,47 +51,59 @@ export default function Home() {
   };
 
   return (
-    <Container>
-      <Banner />
-      <Paper>
-        <Group justify="space-between" align="end">
-          <Title>มาตราทั้งหมด:</Title>
+    <article>
+      <header>
+        <Container>
+          <Banner />
+          <Paper>
+            <Group justify="space-between" align="end">
+              <Title>มาตราทั้งหมด:</Title>
 
-          <Group>
-            <Select
-              label="เรียงลำดับตาม"
-              data={filers}
-              value={filter}
-              onChange={setFilter}
-              className={classes.controller}
-            />
+              <Group>
+                <Select
+                  label="เรียงลำดับตาม"
+                  data={filers}
+                  value={filter}
+                  onChange={setFilter}
+                  className={classes.controller}
+                />
 
-            <TextInput
-              label="ค้นหา"
-              placeholder="มาตรา..."
-              value={search}
-              onChange={(e) => setSearch(e.currentTarget.value)}
-            />
-          </Group>
-        </Group>
-      </Paper>
-      <Divider className={classes.divider} />
-      <Stack gap="xs">
-        {sections.sort(reOrder).map(
-          (
-            section // use hide section if not found cause performance issue
-          ) => (
-            <Box
-              key={section.id}
-              style={{ display: isFound(section) ? "block" : "none" }}
-            >
-              <Section section={section} number={section.id} />
-            </Box>
-          )
-        )}
+                <TextInput
+                  label="ค้นหา"
+                  placeholder="มาตรา..."
+                  value={search}
+                  onChange={(e) => setSearch(e.currentTarget.value)}
+                />
+              </Group>
+            </Group>
+          </Paper>
 
-        {!sections.find(isFound) && <Text ta={"center"} >ไม่พบข้อมูล</Text>}
-      </Stack>
-    </Container>
+          <Divider className={classes.divider} />
+        </Container>
+      </header>
+      <Container  className={classes.innerContainer}>
+        <div className={classes.inner} >
+          <div className={classes.content} id="root">
+            <Stack gap="xs">
+              {sections.sort(reOrder).map(
+                (
+                  section // use hide section if not found cause performance issue
+                ) => (
+                  <Box
+                    key={section.id}
+                    style={{ display: isFound(section) ? "block" : "none" }}
+                  >
+                    <Section section={section} number={section.id} />
+                  </Box>
+                )
+              )}
+
+              {!sections.find(isFound) && <Text ta={"center"} >ไม่พบข้อมูล</Text>}
+            </Stack>
+          </div>
+        </div>
+        <TableOfContents withTabs={false} />
+      </Container>
+    </article>
   );
 }

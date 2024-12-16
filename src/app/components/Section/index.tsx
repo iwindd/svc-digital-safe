@@ -31,6 +31,8 @@ const Section = React.memo(({ section, number, popover }: SectionProps) => {
         radius: "md",
         id: `section${number}`
       })}
+      data-order={2}
+      data-heading={`มาตราที่ ${number}`}
     >
       <Card.Section inheritPadding className={classes.headerSection}>
         <Group align="center" justify="space-between">

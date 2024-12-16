@@ -1,3 +1,4 @@
+
 .divider{
   margin: 1em 0;
 }
@@ -6,4 +7,27 @@
   @media (max-width: $mantine-breakpoint-sm) {
     width: 100%;
   }
+}
+
+.innerContainer {
+  --table-of-contents-width: 200px;
+
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+
+  @mixin smaller-than $mantine-breakpoint-md {
+    --table-of-contents-width: 0;
+  }
+}
+
+.inner {
+  width: 100%;
+  max-width: calc(100% - var(--table-of-contents-width));
+  overflow: hidden;
+}
+
+.content {
+  flex: 0 0 calc(100% - var(--table-of-contents-width));
+  max-width: 100%;
 }
