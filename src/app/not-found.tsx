@@ -1,5 +1,6 @@
 import { Button, Container, Group, Text, Title } from '@mantine/core';
 import classes from './styles/404.module.css';
+import Link from 'next/link';
 
 function Illustration(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -23,7 +24,11 @@ export default function NotFound() {
             หน้าที่คุณพยายามเปิดไม่มีอยู่คุณอาจพิมพ์ที่อยู่ผิด หรือหน้าดังกล่าวถูกย้ายไปยัง URL อื่น หากคุณคิดว่านี่เป็นข้อผิดพลาด กรุณาติดต่อฝ่ายสนับสนุน
           </Text>
           <Group justify="center">
-            <Button size="md">กลับไปที่หน้าแรก</Button>
+            <Button 
+              component={Link}
+              href={'/'}
+              size="md"
+            >กลับไปที่หน้าแรก</Button>
           </Group>
         </div>
       </div>
