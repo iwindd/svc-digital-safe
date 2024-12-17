@@ -24,8 +24,8 @@ const calculateLiablePoint = (liable: Liable) => {
     let point = 0;
   
     const calPoint = (liable : LiableSingle) => {
-      if (liable.fine) point = (liable.fine[2] != undefined ? liable.fine[0] : liable.fine[1]) as number;
-      if (liable.imprisonment) point = ((liable.imprisonment[2] != undefined ? liable.imprisonment[0] : liable.imprisonment[1]) as number) * WAGE;
+      if (liable?.fine) point = (liable.fine[2] != undefined ? liable.fine[0] : liable.fine[1]) as number;
+      if (liable?.imprisonment) point = ((liable.imprisonment[2] != undefined ? liable.imprisonment[0] : liable.imprisonment[1]) as number) * WAGE;
     }
 
     if (Array.isArray(liable)) {
