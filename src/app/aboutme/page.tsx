@@ -26,7 +26,7 @@ const Data = [
         answer: "	วิน",
       },
       {
-        question: "อีเมล์",
+        question: "อีเมล",
         answer: "achirawitkaewkhong@outlook.com",
       },
     ],
@@ -45,7 +45,7 @@ const Data = [
         answer: "Mr.Krissada Amnajaroen",
       },
       {
-        question: "อีเมล์",
+        question: "อีเมล",
         answer: "krissada@svc.ac.th",
       },
     ],
