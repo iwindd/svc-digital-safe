@@ -22,10 +22,6 @@ const Data = [
         answer: "Mr.Achirawit Kaewkhong",
       },
       {
-        question: "ชื่อเล่น",
-        answer: "	วิน",
-      },
-      {
         question: "อีเมล",
         answer: "achirawitkaewkhong@outlook.com",
       },
