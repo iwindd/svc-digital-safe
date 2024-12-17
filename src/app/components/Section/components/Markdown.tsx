@@ -6,11 +6,10 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import SectionPopover from "./SectionPopover";
 
-const Markdown = (props: { children: string }) => {
+const Markdown = (props: { markdown: string }) => {
   return (
     <ReactMarkdown 
       remarkPlugins={[remarkGfm]} 
-      children={props.children}
       components={{
         p({ children }){
           return <Text>{children as string}</Text>
@@ -36,7 +35,11 @@ const Markdown = (props: { children: string }) => {
           return <List.Item>{children as string}</List.Item>
         }
       }}
-    />
+    >
+      {
+        props.markdown
+      }
+    </ReactMarkdown>
   );
 };
 

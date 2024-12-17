@@ -47,7 +47,7 @@ const Section = React.memo(({ section, number, popover }: SectionProps) => {
         </Group>
       </Card.Section>
       <div className={classes.paragraph} style={{maxHeight: popover ? "200px" : "auto"}}>
-        <Markdown children={section.text} />
+        <Markdown markdown={section.text} />
       </div>
       {(section.cases || section.offense) && !popover &&(
         <Accordion
@@ -69,7 +69,7 @@ const Section = React.memo(({ section, number, popover }: SectionProps) => {
               </Accordion.Control>
               <Accordion.Panel>
                 <div>
-                  <Markdown children={section.offense} />
+                  <Markdown markdown={section.offense} />
                 </div>
               </Accordion.Panel>
             </Accordion.Item>

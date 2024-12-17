@@ -55,7 +55,7 @@ const content = (`
 const EffectPage = () => {
   return (
     <Container>
-      <Markdown children={content} />
+      <Markdown markdown={content} />
     </Container>
   )
 }

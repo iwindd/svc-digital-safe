@@ -51,7 +51,7 @@ const content = (`
 const ReportPage = () => {
   return (
     <Container>
-      <Markdown children={content} />
+      <Markdown markdown={content} />
     </Container>
   )
 }
