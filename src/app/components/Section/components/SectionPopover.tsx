@@ -1,5 +1,5 @@
 import type { Section as SectionType } from "@/data/sections";
-import { Button, Popover, Text } from "@mantine/core";
+import { Popover, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import React from "react";
 import Section from "..";

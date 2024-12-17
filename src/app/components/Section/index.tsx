@@ -103,4 +103,6 @@ const Section = React.memo(({ section, number, popover }: SectionProps) => {
   );
 });
 
+Section.displayName = 'Section';
+
 export default Section;

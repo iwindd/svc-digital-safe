@@ -1,4 +1,3 @@
-import category from "./category";
 import categories, { Category } from "./category";
 
 export type LiableName       = "imprisonment" | "fine" | "fineUntil";
@@ -37,6 +36,7 @@ const calculateLiablePoint = (liable: Liable) => {
 
     return point / 100;
   } catch (error) {
+    console.error(error);
     return 0;
   }
 }
