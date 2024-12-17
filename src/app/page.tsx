@@ -73,6 +73,7 @@ export default function Home() {
                   placeholder="มาตรา..."
                   value={search}
                   onChange={(e) => setSearch(e.currentTarget.value)}
+                  className={classes.controller}
                 />
               </Group>
             </Group>
