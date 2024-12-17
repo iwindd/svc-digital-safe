@@ -42,7 +42,7 @@ const Section = React.memo(({ section, number, popover }: SectionProps) => {
           </Group>
 
           { section.category && (
-            <Badge color={section.category.color}>{section.category.label}</Badge>
+            <Badge color={section.category.color}>หมวดหมู่ {section.category.label}</Badge>
           )}
         </Group>
       </Card.Section>
