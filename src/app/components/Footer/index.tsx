@@ -29,21 +29,12 @@ const data : FooterData[] = [
     ],
   },
   {
-    title: "เกี่ยวกับ",
+    title: "สารบัญ",
     links: [
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
-    ],
-  },
-  {
-    title: "ติดต่อ",
-    links: [
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
-      { label: "-", link: "#" },
+      { label: "มาตราทั้งหมด", link: "/" },
+      { label: "ผลกระทบ", link: "/effect" },
+      { label: "การแจ้งความ", link: "/report" },
+      { label: "ข้อมูลผู้จัดทำ", link: "/aboutme" },
     ],
   },
 ];
