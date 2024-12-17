@@ -42,7 +42,7 @@ const Data = [
       },
       {
         question: "ชื่อ นามสกุล(ภาษาอังกฤษ)",
-        answer: "Mr.Krissada Amnatcharoen",
+        answer: "Mr.Krissada Amnajaroen",
       },
       {
         question: "อีเมล์",
