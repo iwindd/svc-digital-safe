@@ -39,6 +39,21 @@ const data : FooterData[] = [
   },
 ];
 
+const links = [
+  {
+    icon: <IconBrandFacebook size={18} stroke={1.5} />,
+    href: 'https://www.facebook.com/AchirawitKaewkhong/'
+  },
+  {
+    icon: <IconBrandGithub size={18} stroke={1.5} />,
+    href: 'https://github.com/iwindd'
+  },
+  {
+    icon: <IconBrandYoutube size={18} stroke={1.5} />,
+    href: 'https://www.youtube.com/@iwindd'
+  },
+];
+
 export function Footer() {
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -100,15 +115,22 @@ export function Footer() {
           justify="flex-end"
           wrap="nowrap"
         >
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandFacebook size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandGithub size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandYoutube size={18} stroke={1.5} />
-          </ActionIcon>
+          {
+            links.map((link) => (
+              <ActionIcon
+                key={link.href}
+                size="lg"
+                color="gray"
+                variant="subtle"
+                component="a"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.icon}
+              </ActionIcon>
+            ))
+          }
         </Group>
       </Container>
     </footer>
