@@ -17,6 +17,7 @@ const links = [
   { link: "/", label: "มาตรา" },
   { link: "/effect", label: "ผลกระทบ" },
   { link: "/report", label: "การแจ้งความ" },
+  { link: "/aboutme", label: "ผู้สร้าง" },
 ];
 
 export function Navbar() {
